@@ -10,8 +10,10 @@ public class PlayerCollision : MonoBehaviour
 
     [SerializeField] WeaponsManager weaponManager;
 
+    [SerializeField] ParticleSystem myParticle;
+
     public static event Action OnDead;
-    public static event Action<int> OnChangeHP;
+    public static event Action<float> OnChangeHP;
 
     private void Start()
     {
@@ -141,5 +143,11 @@ public class PlayerCollision : MonoBehaviour
     {
         HUDManager.Instance.SetSelectedText(" CLICKED ");
 
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        playerData.Damage(0.1f);
+        PlayerCollision.OnChangeHP?.Invoke(playerData.HP);
     }
 }

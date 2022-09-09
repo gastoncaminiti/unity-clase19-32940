@@ -25,7 +25,7 @@ public class SFXManager : MonoBehaviour
     private void OnDisable()
     {
         PlayerEvents.OnHeal -= HealingSFX;
-        PlayerEvents.OnDamage -= HealingSFX;
+        PlayerEvents.OnDamage -= DamageSFX;
         PlayerEvents.OnWin -= WinSFX;
     }
 
@@ -35,7 +35,7 @@ public class SFXManager : MonoBehaviour
         else PlaySFX(1, 0.8f);
     }
 
-    private void DamageSFX(int hp)
+    private void DamageSFX(float hp)
     {
         if (hp > 10) PlaySFX(2, 1.2f);
         else PlaySFX(3, 0.8f);

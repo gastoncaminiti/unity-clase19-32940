@@ -78,7 +78,7 @@ public class HUDManager : MonoBehaviour
         }
     }
 
-    public static void SetHPBar(int newValue)
+    public static void SetHPBar(float newValue)
     {
         instance.hpBar.value = newValue;
     }

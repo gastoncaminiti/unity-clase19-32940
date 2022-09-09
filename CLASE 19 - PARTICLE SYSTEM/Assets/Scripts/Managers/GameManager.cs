@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void SetScore(int newValue)
+    private void SetScore(float newValue)
     {
-        score += newValue * 200;
+        score += ((int)newValue) * 200;
         Debug.Log("DESDE EL GM "+score);
     }
 

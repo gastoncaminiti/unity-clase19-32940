@@ -6,8 +6,8 @@ public class PlayerData : MonoBehaviour
 {
     [SerializeField]
     [Range(1, 10)]
-    private int live = 1;
-    public int HP { get { return live; } }
+    private float live = 1;
+    public float HP { get { return live; } }
 
     private void OnEnable()
     {
@@ -28,7 +28,7 @@ public class PlayerData : MonoBehaviour
         //DISPARAR SONIDO
     }
 
-    public void Damage(int value)
+    public void Damage(float value)
     {
         live -= value;
     }
